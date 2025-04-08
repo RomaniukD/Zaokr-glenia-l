@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2, h3 {
+    display: inline;
+}
+input {
+    width: 50px;
+    border-radius: 5px;
+}
+button {
+    text-decoration: none;
+    background-color: aquamarine;
+    border: none;
+    border-radius: 12px;
+    width: inherit;
+    height: inherit;
+    font-size: x-large;
+}
+
+#input-block {
+    display: inline-block;
+    margin: auto;
+}
+
+#wynnik-box div {
+    background-color: aqua;
+    border: 1px solid;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 7px;
+}
+    </style>
+</head>
+<body>
+   <div id="input-block">
+       <input type="number" value="0" set="any" id="liczba">
+       <button type="button" onclick="zaokrongli()" >Zaokrągl</button>
+    </div>
+
+    <section id="wynnik-box">
+        <div>
+            <h2>liczba zaokrąglona w dół: </h2> <h3 id="dol"></h3>
+        </div>
+        <div>
+            <h2>liczba zaokrąglona w górę: </h2> <h3 id="gora"></h3>
+        </div>
+        <div>
+            <h2>liczba zaokrąglona do najbliższej liczby całkowitej: </h2> <h3 id="calkowita"></h3>
+        </div>
+
+    </section>
+
+    <script>
+        const zaokrongli = () => {
+    let liczba = document.getElementById("liczba").value;
+    
+    let zaokrongleniaDol = Math.floor(liczba);
+    let zaokrongleniaGore = Math.ceil(liczba);
+    let zaokrongleniaCalkowite = Math.round(liczba);
+    
+    document.getElementById('dol').textContent = zaokrongleniaDol;
+    document.getElementById('gora').textContent = zaokrongleniaGore;
+    document.getElementById('calkowita').textContent = zaokrongleniaCalkowite;
+
+}
+    </script>
+</body>
+</html>
