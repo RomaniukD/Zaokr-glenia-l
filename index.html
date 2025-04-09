@@ -42,7 +42,7 @@ button {
        <button type="button" onclick="zaokrongli()" >Zaokrągl</button>
     </div>
 
-    <section id="wynnik-box">
+   <section id="wynnik-box">
         <div>
             <h2>liczba zaokrąglona w dół: </h2> <h3 id="dol"></h3>
         </div>
@@ -53,28 +53,25 @@ button {
             <h2>liczba zaokrąglona do najbliższej liczby całkowitej: </h2> <h3 id="calkowita"></h3>
         </div>
         <div>
-             <h3 id="calkowita_n"></h3>
+            <h2>czy liczba całkowita: </h2> <h3 id="calkowita_n"></h3>
         </div>
-
     </section>
-
+    
     <script>
         const zaokrongli = () => {
-    let liczba = document.getElementById("liczba").value;
-
-if (isInteger(liczba)) {
-    document.getElementById('calkowita_n').textContent = "Liczba całkowita";
-}
-            
-    let zaokrongleniaDol = Math.floor(liczba);
-    let zaokrongleniaGore = Math.ceil(liczba);
-    let zaokrongleniaCalkowite = Math.round(liczba);
+            let liczba = parseFloat(document.getElementById("liczba").value);
     
-    document.getElementById('dol').textContent = zaokrongleniaDol;
-    document.getElementById('gora').textContent = zaokrongleniaGore;
-    document.getElementById('calkowita').textContent = zaokrongleniaCalkowite;
-
-}
+            let liczba_int = (liczba % 1 === 0) ? "Tak" : "Nie"; 
+    
+            let zaokrongleniaDol = Math.floor(liczba);
+            let zaokrongleniaGore = Math.ceil(liczba);
+            let zaokrongleniaCalkowite = Math.round(liczba);
+    
+            document.getElementById('dol').textContent = zaokrongleniaDol;
+            document.getElementById('gora').textContent = zaokrongleniaGore;
+            document.getElementById('calkowita').textContent = zaokrongleniaCalkowite;
+            document.getElementById('calkowita_n').textContent = liczba_int;
+        }
     </script>
 </body>
 </html>
