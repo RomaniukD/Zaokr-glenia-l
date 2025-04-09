@@ -52,13 +52,20 @@ button {
         <div>
             <h2>liczba zaokrąglona do najbliższej liczby całkowitej: </h2> <h3 id="calkowita"></h3>
         </div>
+        <div>
+             <h3 id="calkowita_n"></h3>
+        </div>
 
     </section>
 
     <script>
         const zaokrongli = () => {
     let liczba = document.getElementById("liczba").value;
-    
+
+if (isInteger(liczba)) {
+    document.getElementById('calkowita_n').textContent = "Liczba całkowita";
+}
+            
     let zaokrongleniaDol = Math.floor(liczba);
     let zaokrongleniaGore = Math.ceil(liczba);
     let zaokrongleniaCalkowite = Math.round(liczba);
